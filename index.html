@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footy Wordle - Pro Edition</title>
+    <style>
+        :root {
+            --color-correct: #538d4e;
+            --color-wrong: #3a3a3c;
+            --color-bg: #121213;
+            --color-border: #3a3a3c;
+            --color-text: #ffffff;
+            --color-gold: #ffd700;
+            --color-accent: #c63d2f;
+            --name-column-width: 160px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            margin: 0;
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 视图管理 */
+        .view { display: none; width: 100%; flex-direction: column; align-items: center; }
+        .active { display: flex; }
+
+        /* 首页 */
+        #home-view { justify-content: center; height: 100vh; text-align: center; }
+        .logo { font-size: 4.5rem; font-weight: 900; color: var(--color-gold); margin-bottom: 25px; line-height: 0.9; letter-spacing: -3px; }
+
+        /* 游戏主体 */
+        .game-container { width: 100%; max-width: 800px; padding: 20px 15px; box-sizing: border-box; }
+
+        /* 顶栏数据 */
+        .stats-bar {
+            display: flex; justify-content: space-between; width: 100%; max-width: 800px;
+            padding: 25px; box-sizing: border-box; background: #1e1e1f; border-bottom: 2px solid var(--color-border);
+        }
+        .stat-item { text-align: left; }
+        .stat-value { font-size: 2rem; font-weight: bold; color: var(--color-gold); }
+        .stat-label { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1.5px; }
+
+        /* 计时器条 */
+        .timer-wrapper { width: 100%; height: 10px; background: #333; }
+        #timer-bar { width: 100%; height: 100%; background: var(--color-correct); transition: width 1s linear; }
+
+        /* 输入区 */
+        .search-area { margin: 35px 0; }
+        input {
+            width: 100%; padding: 20px; font-size: 1.3rem; border-radius: 12px;
+            background: #272729; color: white; border: 3px solid var(--color-border); outline: none;
+            box-sizing: border-box; transition: all 0.3s;
+        }
+        input:focus { border-color: var(--color-gold); background: #2f2f31; }
+
+        /* 核心布局 */
+        .table-header {
+            display: grid;
+            grid-template-columns: var(--name-column-width) repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+            padding: 0 5px;
+        }
+        .header-item {
+            font-size: 1rem;
+            color: #ddd;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #333;
+        }
+
+        .grid { display: flex; flex-direction: column; gap: 12px; }
+        .row { display: grid; grid-template-columns: var(--name-column-width) repeat(5, 1fr); gap: 10px; }
+
+        /* 通用单元格样式 */
+        .cell {
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-wrong);
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 10px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid rgba(255,255,255,0.1);
+            animation: flipIn 0.5s ease forwards;
+            min-width: 0;
+        }
+
+        /* 名字单元格：修复上下居中且支持缩略 */
+        .cell.name-cell {
+            aspect-ratio: auto; /* 名字行高度由属性格决定 */
+            background-color: #272729;
+            font-size: 1.1rem;
+            color: var(--color-gold);
+            padding: 0 10px;
+            border-left: 4px solid var(--color-gold);
+            overflow: hidden; /* 关键：配合内部容器 */
+        }
+
+        /* 内部文字容器：专门负责水平居中和缩略 */
+        .name-text {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+        }
+
+        /* 国旗特大化 */
+        .cell.nation-cell {
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .cell.correct { background-color: var(--color-correct); border-color: #71b36a; }
+
+        @keyframes flipIn {
+            from { transform: rotateX(-90deg); opacity: 0; }
+            to { transform: rotateX(0); opacity: 1; }
+        }
+
+        /* 结算弹窗 */
+        .overlay {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.96);
+            z-index: 100; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 20px;
+        }
+        .btn-main { padding: 18px 50px; background: var(--color-correct); color: white; border: none; border-radius: 10px; font-size: 1.3rem; cursor: pointer; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body>
+
+<div id="home-view" class="view active">
+    <div class="logo">FOOTY<br>WORDLE</div>
+    <button class="btn-main" onclick="switchView('game-view')">开始挑战</button>
+    <p style="color:#777; margin-top:30px; font-size:1.1rem; font-weight: 500;">15秒一回合 · 6次机会 · 实时竞技</p>
+</div>
+
+<div id="game-view" class="view">
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-label">Guesses Left</span>
+            <span id="lives-count" class="stat-value">6</span>
+        </div>
+        <div class="stat-item" style="text-align: right;">
+            <span class="stat-label">Round Timer</span>
+            <span id="timer-text" class="stat-value">15</span>
+        </div>
+    </div>
+    <div class="timer-wrapper">
+        <div id="timer-bar"></div>
+    </div>
+
+    <div class="game-container">
+        <div class="search-area">
+            <input type="text" id="guess-input" list="players-list" placeholder="输入球员姓名..." autocomplete="off">
+            <datalist id="players-list"></datalist>
+        </div>
+
+        <div class="table-header">
+            <div class="header-item">Player</div>
+            <div class="header-item">Nation</div>
+            <div class="header-item">League</div>
+            <div class="header-item">Club</div>
+            <div class="header-item">Pos</div>
+            <div class="header-item">Age</div>
+        </div>
+
+        <div id="result-grid" class="grid"></div>
+    </div>
+</div>
+
+<div id="overlay" class="overlay">
+    <h1 id="msg-title" style="font-size: 4rem; margin: 0;"></h1>
+    <p id="msg-body" style="font-size: 1.6rem; margin: 30px 0 50px; line-height: 1.6; color: #eee;"></p>
+    <button class="btn-main" onclick="startNewGame()">再来一局</button>
+    <button onclick="location.reload()" style="background:none; border:none; color:#777; margin-top:30px; cursor:pointer; text-decoration: underline; font-size: 1.1rem;">返回首页</button>
+</div>
+
+<script>
+    const MAX_LIVES = 6;
+    const ROUND_TIME = 15;
+    let playerDatabase = [];
+    let targetPlayer = null;
+    let lives = MAX_LIVES;
+    let timeLeft = ROUND_TIME;
+    let timerInterval = null;
+
+    function getFlagEmoji(countryCode) {
+        if (!countryCode || countryCode.length !== 2) return null;
+        try {
+            const code = countryCode.toUpperCase();
+            return String.fromCodePoint(...[...code].map(c => c.charCodeAt(0) + 127397));
+        } catch (e) { return null; }
+    }
+
+    async function init() {
+        try {
+            const res = await fetch('./players.json');
+            playerDatabase = await res.json();
+            const list = document.getElementById('players-list');
+            playerDatabase.forEach(p => {
+                const opt = document.createElement('option');
+                opt.value = p.name;
+                list.appendChild(opt);
+            });
+        } catch (e) { console.error("数据加载失败"); }
+    }
+
+    function switchView(id) {
+        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        if(id === 'game-view') startNewGame();
+    }
+
+    function startNewGame() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('result-grid').innerHTML = "";
+        lives = MAX_LIVES;
+        targetPlayer = playerDatabase[Math.floor(Math.random() * playerDatabase.length)];
+        console.log("答案:", targetPlayer.name);
+        updateUI();
+        resetTimer();
+    }
+
+    function resetTimer() {
+        clearInterval(timerInterval);
+        timeLeft = ROUND_TIME;
+        const bar = document.getElementById('timer-bar');
+        bar.style.transition = 'none';
+        bar.style.width = '100%';
+        bar.style.backgroundColor = "var(--color-correct)";
+        void bar.offsetWidth;
+        bar.style.transition = 'width 1s linear, background-color 0.3s';
+        updateTimerUI();
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            updateTimerUI();
+            if (timeLeft <= 0) endGame(false, "时间耗尽！");
+        }, 1000);
+    }
+
+    function updateTimerUI() {
+        document.getElementById('timer-text').innerText = timeLeft;
+        const bar = document.getElementById('timer-bar');
+        bar.style.width = (timeLeft / ROUND_TIME) * 100 + "%";
+        if (timeLeft < 5) bar.style.backgroundColor = "var(--color-accent)";
+    }
+
+    function updateUI() {
+        document.getElementById('lives-count').innerText = lives;
+        const input = document.getElementById('guess-input');
+        input.value = "";
+        input.disabled = false;
+        input.focus();
+    }
+
+    document.getElementById('guess-input').addEventListener('keypress', e => {
+        if(e.key === 'Enter') {
+            const val = e.target.value.trim();
+            const p = playerDatabase.find(x => x.name.toLowerCase() === val.toLowerCase());
+            if(p) {
+                lives--;
+                renderRow(p);
+                if(p.name === targetPlayer.name) endGame(true, "绝杀成功！");
+                else if(lives <= 0) endGame(false, "机会用尽！");
+                else { updateUI(); resetTimer(); }
+            }
+        }
+    });
+
+    function renderRow(guess) {
+        const grid = document.getElementById('result-grid');
+        const row = document.createElement('div');
+        row.className = 'row';
+
+        // 1. 名字列 (Name) - 内部嵌套 span 实现完美居中+缩略
+        const nameCell = document.createElement('div');
+        nameCell.className = 'cell name-cell';
+        if(guess.name === targetPlayer.name) nameCell.classList.add('correct');
+
+        const nameText = document.createElement('div');
+        nameText.className = 'name-text';
+        nameText.innerText = guess.name;
+
+        nameCell.appendChild(nameText);
+        nameCell.title = guess.name;
+        row.appendChild(nameCell);
+
+        // 2. 属性列
+        const fields = ['nation', 'league', 'club', 'pos', 'age'];
+        fields.forEach(f => {
+            const cell = document.createElement('div');
+            const isCorrect = guess[f] === targetPlayer[f];
+            cell.className = 'cell' + (isCorrect ? ' correct' : '');
+
+            if (f === 'nation') cell.classList.add('nation-cell');
+
+            let displayVal = guess[f];
+            if (f === 'nation') {
+                const code = (guess.nationCode || "").trim();
+                const emoji = getFlagEmoji(code);
+                displayVal = emoji ? emoji : guess.nation;
+            }
+            if(f === 'age' && !isCorrect) {
+                displayVal += (parseInt(guess.age) < parseInt(targetPlayer.age) ? " ↑" : " ↓");
+            }
+
+            cell.innerText = displayVal;
+            row.appendChild(cell);
+        });
+
+        grid.prepend(row);
+    }
+
+    function endGame(won, txt) {
+        clearInterval(timerInterval);
+        document.getElementById('guess-input').disabled = true;
+        document.getElementById('overlay').style.display = 'flex';
+        document.getElementById('msg-title').innerText = won ? "VICTORY" : "DEFEAT";
+        document.getElementById('msg-body').innerText = `${txt}\n\n神秘球员是：${targetPlayer.name}`;
+    }
+
+    init();
+</script>
+</body>
+</html>
