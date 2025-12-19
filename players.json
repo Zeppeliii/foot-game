@@ -1118,5 +1118,985 @@
     "age": 23,
     "photo": "https://img.a.transfermarkt.technology/portrait/medium/709726-1758714741.jpg?lm=1",
     "state": 0
+  },
+  {
+    "name": "胡安·加西亚",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "守门员",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/561613-1747386081.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "特尔施特根",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "守门员",
+    "age": 33,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/74857-1674465246.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "什琴斯尼",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/135.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "守门员",
+    "age": 35,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/44058-1744278078.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "保罗·库巴西",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "中后卫",
+    "age": 18,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/962110-1712779232.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "埃里克·加西亚",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "中后卫",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/466794-1693604801.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "罗纳德·阿劳霍",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/179.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "中后卫",
+    "age": 26,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/480267-1736431980.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "克里斯滕森",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/39.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "中后卫",
+    "age": 29,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/196948-1668183241.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "亚历杭德罗·巴尔德",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "左后卫",
+    "age": 22,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/636688-1662836200.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "赫拉德·马丁",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "左后卫",
+    "age": 23,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/705395-1730119053.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "朱尔斯·孔德",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "右后卫",
+    "age": 27,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/411975-1702502639.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "马克·卡萨多",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "防守型中场",
+    "age": 22,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/636695-1729771427.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "佩德里",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "中场",
+    "age": 23,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/683840-1744278342.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "弗兰基·德容",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/122.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "中场",
+    "age": 28,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/326330-1746041680.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "加维",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "中场",
+    "age": 21,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/646740-1682685701.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "费尔明·洛佩兹",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "进攻型中场",
+    "age": 22,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/636703-1698086824.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "丹尼·奥尔莫",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "进攻型中场",
+    "age": 27,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/293385-1711546268.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "拉菲尼亚",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/26.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "左翼",
+    "age": 29,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/411295-1729754479.png?lm=1",
+    "state": 1
+  },
+  {
+    "name": "马库斯·拉什福德",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/189.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "左翼",
+    "age": 28,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/258923-1674473054.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "拉明·亚马尔",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "右翼",
+    "age": 18,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/937958-1746563945.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "费兰·托雷斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "中锋",
+    "age": 25,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/398184-1699383547.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "罗伯特·莱万多夫斯基",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/135.png?lm=1520611569",
+    "league": "西甲",
+    "club": "巴塞罗那",
+    "pos": "中锋",
+    "age": 37,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/38253-1760445524.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "库尔图瓦",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/19.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "守门员",
+    "age": 33,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/108390-1717280733.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "安德烈·卢宁",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/177.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "守门员",
+    "age": 26,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/404839-1701294131.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "迪恩·赫伊森",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "中后卫",
+    "age": 20,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/890290-1750251451.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "埃德尔·米利唐",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/26.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "中后卫",
+    "age": 27,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/401530-1719653438.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "劳尔·阿森西奥",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "中后卫",
+    "age": 22,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/935245-1731168094.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "吕迪格",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "中后卫",
+    "age": 32,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/86202-1684484602.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "阿拉巴",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/127.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "中后卫",
+    "age": 33,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/59016-1684921582.jpeg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "阿尔瓦罗·卡雷拉斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "左后卫",
+    "age": 22,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/811778-1737497415.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "费兰·门迪",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "左后卫",
+    "age": 30,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/291417-1701294025.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "亚历山大-阿诺德",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/189.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "右后卫",
+    "age": 27,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/314353-1701680958.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "卡瓦哈尔",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "右后卫",
+    "age": 33,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/138927-1721026790.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "楚阿梅尼",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "防守型中场",
+    "age": 25,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/413112-1668500754.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "巴尔韦德",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/179.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "中场",
+    "age": 27,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/369081-1731018042.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "卡马文加",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "中场",
+    "age": 23,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/640428-1668500874.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "贝林厄姆",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/189.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "进攻型中场",
+    "age": 22,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/581678-1748102891.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "居莱尔",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/174.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "进攻型中场",
+    "age": 20,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/861410-1699472585.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "维尼修斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/26.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "左翼",
+    "age": 25,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/371998-1761575144.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "罗德里戈",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/26.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "右翼",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/412363-1763041611.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "马斯坦托诺",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/9.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "右翼",
+    "age": 18,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/1057316-1755702696.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "卜拉欣·迪亚斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/107.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "右翼",
+    "age": 26,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/314678-1744193327.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "基利安·姆巴佩",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "中锋",
+    "age": 26,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/342229-1682683695.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "恩德里克",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/26.png?lm=1520611569",
+    "league": "西甲",
+    "club": "皇家马德里",
+    "pos": "中锋",
+    "age": 19,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/971570-1723665994.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "奥布拉克",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/155.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "守门员",
+    "age": 32,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/121483-1719350076.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "勒诺尔芒",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "中后卫",
+    "age": 29,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/351809-1707948228.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "希门尼斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/179.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "中后卫",
+    "age": 30,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/250845-1664970029.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "朗格莱",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "中后卫",
+    "age": 30,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/182904-1599988301.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "马科斯·略伦特",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "右后卫",
+    "age": 30,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/282411-1684159821.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "莫利纳",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/9.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "右后卫",
+    "age": 27,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/424042-1697037362.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "巴勃罗·巴里奥斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "中场",
+    "age": 22,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/775605-1699431384.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "加拉格尔",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/189.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "中场",
+    "age": 25,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/488362-1668500476.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "科克",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "中场",
+    "age": 33,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/74229-1664970397.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "巴埃纳",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "左翼",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/548111-1761821030.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "尼科·冈萨雷斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/9.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "左翼",
+    "age": 27,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/486031-1673442459.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "蒂亚戈·阿尔马达",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/9.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "左翼",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/576028-1709363616.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "朱利亚诺·西蒙尼",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/9.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "右翼",
+    "age": 23,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/742201-1741120599.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "拉斯帕多里",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/75.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "第二前锋",
+    "age": 25,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/405885-1708552564.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "安托万·格里兹曼",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "第二前锋",
+    "age": 34,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/125781-1719928503.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "阿尔瓦雷斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/9.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "中锋",
+    "age": 25,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/576024-1684920938.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "瑟洛特",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/125.png?lm=1520611569",
+    "league": "西甲",
+    "club": "马德里竞技",
+    "pos": "中锋",
+    "age": 30,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/238407-1716403969.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "舍瓦利耶",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "守门员",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/463600-1708342501.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "威廉·帕乔",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/44.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "中后卫",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/661171-1696508666.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "扎巴尔尼",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/177.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "中后卫",
+    "age": 23,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/659089-1760065378.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "马尔基尼奥斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/26.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "中后卫",
+    "age": 31,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/181767-1672303747.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "努诺·门德斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/136.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "左后卫",
+    "age": 23,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/616341-1749417164.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "卢卡斯·埃尔南德斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "左后卫",
+    "age": 29,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/281963-1667830435.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "阿什拉夫·哈基米",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/107.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "右后卫",
+    "age": 27,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/398073-1672304327.jpg?lm=1",
+    "state": 3
+  },
+  {
+    "name": "维蒂尼亚",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/136.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "防守型中场",
+    "age": 25,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/487469-1749415169.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "若昂·内维斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/136.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "中场",
+    "age": 21,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/670681-1701295511.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "扎伊尔-埃梅里",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "中场",
+    "age": 19,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/810092-1672303575.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "法比安·鲁伊斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "中场",
+    "age": 29,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/350219-1718958379.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "李刚仁",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/87.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "进攻型中场",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/557149-1703978046.jpg?lm=1",
+    "state": 2
+  },
+  {
+    "name": "克瓦拉茨赫利亚",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/53.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "左翼",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/502670-1708553120.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "巴尔科拉",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "左翼",
+    "age": 23,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/708265-1653406915.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "杜埃",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "右翼",
+    "age": 20,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/914562-1667317075.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "奥斯曼·登贝莱",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "中锋",
+    "age": 28,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/288230-1684148641.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "贡萨洛·拉莫斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/136.png?lm=1520611569",
+    "league": "法甲",
+    "club": "巴黎圣日耳曼",
+    "pos": "中锋",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/550550-1681906158.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "曼努埃尔·诺伊尔",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "守门员",
+    "age": 39,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/17259-1762943283.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "斯文·乌尔赖希",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "守门员",
+    "age": 37,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/40680-1700659982.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "于帕梅卡诺",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "中后卫",
+    "age": 27,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/344695-1701245272.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "金文哉",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/87.png?lm=1520611569",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "中后卫",
+    "age": 29,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/503482-1700208062.jpg?lm=1",
+    "state": 2
+  },
+  {
+    "name": "约纳坦·塔",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "中后卫",
+    "age": 29,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/196357-1695367765.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "伊藤洋辉",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/77.png?lm=1520611569",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "中后卫",
+    "age": 26,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/353892-1657181215.jpg?lm=1",
+    "state": 2
+  },
+  {
+    "name": "阿方索·戴维斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/80.png?lm=1520611569",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "左后卫",
+    "age": 25,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/424204-1711745534.jpg?lm=1",
+    "state": 4
+  },
+  {
+    "name": "拉斐尔·格雷罗",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/136.png?lm=1520611569",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "左后卫",
+    "age": 31,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/170986-1711745629.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "斯坦尼西奇",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/37.png?lm=1520611569",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "右后卫",
+    "age": 25,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/483046-1716966862.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "莱默尔",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/127.png?lm=1520611569",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "右后卫",
+    "age": 28,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/223967-1700659266.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "亚历山大·帕夫洛维奇",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "防守型中场",
+    "age": 21,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/792380-1727098078.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "约书亚·基米希",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "防守型中场",
+    "age": 30,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/161056-1700039639.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "汤姆·比朔夫",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "中场",
+    "age": 20,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/822959-1758269709.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "格雷茨卡",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "中场",
+    "age": 30,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/153084-1700040179.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "穆夏拉",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "进攻型中场",
+    "age": 22,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/580195-1711745441.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "伦纳特·卡尔",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "进攻型中场",
+    "age": 17,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/1075147-1759417800.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "路易斯·迪亚斯",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/83.png?lm=1520611569",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "左翼",
+    "age": 28,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/480692-1757938077.jpg?lm=1",
+    "state": 1
+  },
+  {
+    "name": "奥利塞",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/50.png?lm=1520611569",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "右翼",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/566723-1762944477.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "格纳布里",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/40.png?lm=1520612525",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "第二前锋",
+    "age": 30,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/159471-1759909173.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "哈里·凯恩",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/189.png?lm=1520611569",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "中锋",
+    "age": 32,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/132098-1700211169.jpg?lm=1",
+    "state": 0
+  },
+  {
+    "name": "杰克逊",
+    "nation": "https://tmssl.akamaized.net//images/flagge/verysmall/149.png?lm=1520611569",
+    "league": "德甲",
+    "club": "拜仁慕尼黑",
+    "pos": "中锋",
+    "age": 24,
+    "photo": "https://img.a.transfermarkt.technology/portrait/medium/776890-1757939139.jpg?lm=1",
+    "state": 0
   }
 ]

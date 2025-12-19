@@ -405,7 +405,7 @@
     const posGroups = {
         '后卫': ['左后卫', '右后卫', '中后卫'],
         '中场': ['中场', '进攻型中场', '防守型中场'],
-        '前锋': ['中锋', '左翼', '右翼']
+        '前锋': ['中锋', '左翼', '右翼', '第二前锋']
     };
 
     function getPosGroup(pos) {
@@ -502,7 +502,7 @@
                 }
                 // 判断国家所属州/联合会相同
                 if (f === 'nation') {
-                    if (guess['state']  === targetPlayer['state']) {
+                    if (guess['state'] === targetPlayer['state']) {
                         cell.classList.add('partial');
                     }
                 }
