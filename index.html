@@ -9,6 +9,7 @@
     <style>
         :root {
             --color-correct: #28a745;
+            --color-partial: #ffc107; /* 战术黄色：表示位置同线但非完全相同 */
             --color-wrong: #1a1f29;
             --color-bg: #0c1017;
             --color-panel: #131720;
@@ -20,111 +21,323 @@
         }
 
         @media (max-width: 600px) {
-            :root { --name-column-width: 105px; }
+            :root {
+                --name-column-width: 105px;
+            }
         }
 
         body {
             font-family: 'Teko', 'PingFang SC', system-ui, sans-serif;
             background-color: var(--color-bg);
-            background-image:
-                    radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.12) 0%, transparent 60%),
-                    linear-gradient(rgba(12, 16, 23, 0.9), rgba(12, 16, 23, 0.9)),
-                    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%232c3e50' fill-opacity='0.2' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-7.5L27.99 34H28v2.31h-.01L17 42.65V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.12) 0%, transparent 60%),
+            linear-gradient(rgba(12, 16, 23, 0.9), rgba(12, 16, 23, 0.9)),
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%232c3e50' fill-opacity='0.2' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-7.5L27.99 34H28v2.31h-.01L17 42.65V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             color: var(--color-text);
             margin: 0;
-            display: flex; flex-direction: column; align-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             min-height: 100vh;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             overflow-x: hidden;
         }
 
-        .view { display: none; width: 100%; flex-direction: column; align-items: center; }
-        .active { display: flex; }
+        .view {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
 
-        #home-view { justify-content: center; height: 100vh; text-align: center; }
-        .logo { font-size: 5.5rem; font-weight: 700; color: var(--color-gold); margin-bottom: 0; line-height: 0.85; font-style: italic; text-shadow: var(--glow-gold); }
+        .active {
+            display: flex;
+        }
 
-        .game-container { width: 100%; max-width: 800px; padding: 10px; box-sizing: border-box; }
+        #home-view {
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 5.5rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            margin-bottom: 0;
+            line-height: 0.85;
+            font-style: italic;
+            text-shadow: var(--glow-gold);
+        }
+
+        .game-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
 
         .stats-bar {
-            display: flex; justify-content: space-between; width: 100%;
-            padding: 12px 25px; box-sizing: border-box; background: var(--color-panel);
-            border-top: 3px solid var(--color-gold); border-bottom: 1px solid var(--color-border);
-            box-shadow: var(--glow-gold); margin-bottom: 15px; position: relative;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 25px;
+            box-sizing: border-box;
+            background: var(--color-panel);
+            border-top: 3px solid var(--color-gold);
+            border-bottom: 1px solid var(--color-border);
+            box-shadow: var(--glow-gold);
+            margin-bottom: 15px;
+            position: relative;
         }
-        .stats-bar::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 1px; height: 50%; background: var(--color-border); }
-        .stat-item { text-align: center; flex: 1; }
-        .stat-value { font-size: 2.4rem; font-weight: 700; color: var(--color-gold); line-height: 1; }
-        .stat-label { color: #666; font-size: 0.8rem; font-weight: 600; }
 
-        .timer-wrapper { width: 100%; height: 6px; background: #111; margin-bottom: 20px; }
-        #timer-bar { height: 100%; background: var(--color-correct); transition: width 1s linear; box-shadow: 0 0 8px var(--color-correct); }
+        .stats-bar::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1px;
+            height: 50%;
+            background: var(--color-border);
+        }
 
-        .search-area { margin-bottom: 25px; position: relative; width: 100%; z-index: 1000; }
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .timer-wrapper {
+            width: 100%;
+            height: 6px;
+            background: #111;
+            margin-bottom: 20px;
+        }
+
+        #timer-bar {
+            height: 100%;
+            background: var(--color-correct);
+            transition: width 1s linear;
+            box-shadow: 0 0 8px var(--color-correct);
+        }
+
+        .search-area {
+            margin-bottom: 25px;
+            position: relative;
+            width: 100%;
+            z-index: 1000;
+        }
+
         input {
-            width: 100%; padding: 16px; font-size: 1.3rem; background: var(--color-panel); color: var(--color-gold);
-            border: 2px solid var(--color-border); outline: none; box-sizing: border-box; font-family: 'Teko';
+            width: 100%;
+            padding: 16px;
+            font-size: 1.3rem;
+            background: var(--color-panel);
+            color: var(--color-gold);
+            border: 2px solid var(--color-border);
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Teko';
         }
-        input:focus { border-color: var(--color-gold); box-shadow: var(--glow-gold); }
+
+        input:focus {
+            border-color: var(--color-gold);
+            box-shadow: var(--glow-gold);
+        }
 
         .search-results {
-            position: absolute; top: 100%; left: 0; right: 0; background: var(--color-panel); border: 2px solid var(--color-gold);
-            border-top: none; max-height: 280px; overflow-y: auto; display: none; box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--color-panel);
+            border: 2px solid var(--color-gold);
+            border-top: none;
+            max-height: 280px;
+            overflow-y: auto;
+            display: none;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
         }
-        .search-item { padding: 14px 20px; border-bottom: 1px solid #222; cursor: pointer; font-size: 1.2rem; color: #eee; transition: 0.2s; }
-        .search-item:hover { background: rgba(255, 215, 0, 0.15); color: var(--color-gold); }
 
-        .table-header { display: grid; grid-template-columns: var(--name-column-width) repeat(5, 1fr); gap: 5px; margin-bottom: 8px; }
-        .header-item { font-size: 0.8rem; color: #555; text-align: center; font-weight: 700; font-style: italic; }
+        .search-item {
+            padding: 14px 20px;
+            border-bottom: 1px solid #222;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #eee;
+            transition: 0.2s;
+        }
 
-        .grid { display: flex; flex-direction: column; gap: 6px; }
-        .row { display: grid; grid-template-columns: var(--name-column-width) repeat(5, 1fr); gap: 5px; }
+        .search-item:hover {
+            background: rgba(255, 215, 0, 0.15);
+            color: var(--color-gold);
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: var(--name-column-width) repeat(5, 1fr);
+            gap: 5px;
+            margin-bottom: 8px;
+        }
+
+        .header-item {
+            font-size: 0.8rem;
+            color: #555;
+            text-align: center;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: var(--name-column-width) repeat(5, 1fr);
+            gap: 5px;
+        }
 
         .cell {
-            aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center;
-            background-color: var(--color-wrong); font-size: 1.1rem; font-weight: 600;
-            border: 1px solid #222; overflow: hidden; position: relative;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-wrong);
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: 1px solid #222;
+            overflow: hidden;
+            position: relative;
             animation: flipIn 0.5s ease forwards;
         }
+
         .cell-content {
-            width: 100%; text-align: center; white-space: nowrap; overflow: hidden;
-            text-overflow: ellipsis; padding: 0 3px; box-sizing: border-box;
+            width: 100%;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 0 3px;
+            box-sizing: border-box;
         }
 
         .cell.name-cell {
-            aspect-ratio: auto; color: var(--color-gold); padding: 0 8px;
+            aspect-ratio: auto;
+            color: var(--color-gold);
+            padding: 0 8px;
             border-left: 4px solid var(--color-gold);
-            background: linear-gradient(90deg, rgba(255,215,0,0.05), transparent);
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.05), transparent);
         }
-        .name-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; text-align: center; font-style: italic; font-weight: 700; }
 
-        /* 国旗图标修复 */
-        .flag-icon { width: 32px; height: auto; filter: drop-shadow(0 0 2px rgba(0,0,0,0.5)); }
+        .name-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            text-align: center;
+            font-style: italic;
+            font-weight: 700;
+        }
 
-        .cell.correct { background-color: var(--color-correct); border-color: #3ed260; color: #000; }
+        /* 状态颜色 */
+        .cell.correct {
+            background-color: var(--color-correct);
+            border-color: #3ed260;
+            color: #000;
+        }
 
-        @keyframes flipIn { from { transform: rotateX(-90deg); } to { transform: rotateX(0); } }
+        .cell.partial {
+            background-color: var(--color-partial);
+            border-color: #e0a800;
+            color: #000;
+        }
 
-        /* 结算弹窗增强 */
-        .overlay { display: none; position: fixed; inset: 0; background: rgba(8, 10, 14, 0.98); z-index: 2000; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        .flag-icon {
+            width: 32px;
+            height: auto;
+            filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+        }
 
-        /* 球员大图样式 */
+        @keyframes flipIn {
+            from {
+                transform: rotateX(-90deg);
+            }
+            to {
+                transform: rotateX(0);
+            }
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 10, 14, 0.98);
+            z-index: 2000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
         #msg-photo {
-            width: 130px; height: 130px; border-radius: 50%;
-            border: 3px solid var(--color-gold); margin-bottom: 20px;
-            object-fit: cover; box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid var(--color-gold);
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
             display: none;
         }
 
-        .btn-group { display: flex; flex-direction: column; gap: 15px; margin-top: 35px; }
-        .btn-main {
-            padding: 16px 60px; background: linear-gradient(135deg, var(--color-gold), #e6c300); color: #000; border: none;
-            font-weight: 800; font-size: 1.6rem; cursor: pointer; font-family: 'Teko'; font-style: italic;
-            clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%); transition: 0.2s;
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 35px;
         }
-        .btn-practice { background: linear-gradient(135deg, #444, #222); color: #888; border: 1px solid #333; }
-        .btn-main:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+        .btn-main {
+            padding: 16px 60px;
+            background: linear-gradient(135deg, var(--color-gold), #e6c300);
+            color: #000;
+            border: none;
+            font-weight: 800;
+            font-size: 1.6rem;
+            cursor: pointer;
+            font-family: 'Teko';
+            font-style: italic;
+            clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+            transition: 0.2s;
+        }
+
+        .btn-practice {
+            background: linear-gradient(135deg, #444, #222);
+            color: #888;
+            border: 1px solid #333;
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
     </style>
 </head>
 <body>
@@ -149,7 +362,9 @@
             <div class="stat-label">TIME LEFT</div>
         </div>
     </div>
-    <div id="timer-container" class="timer-wrapper"><div id="timer-bar" style="width:100%;"></div></div>
+    <div id="timer-container" class="timer-wrapper">
+        <div id="timer-bar" style="width:100%;"></div>
+    </div>
 
     <div class="game-container">
         <div class="search-area">
@@ -158,9 +373,12 @@
         </div>
 
         <div class="table-header">
-            <div class="header-item">PLAYER</div><div class="header-item">NAT</div>
-            <div class="header-item">LEA</div><div class="header-item">CLUB</div>
-            <div class="header-item">POS</div><div class="header-item">AGE</div>
+            <div class="header-item">PLAYER</div>
+            <div class="header-item">NAT</div>
+            <div class="header-item">LEA</div>
+            <div class="header-item">CLUB</div>
+            <div class="header-item">POS</div>
+            <div class="header-item">AGE</div>
         </div>
         <div id="result-grid" class="grid"></div>
     </div>
@@ -183,6 +401,20 @@
     let timerInterval = null;
     let isPracticeMode = false;
 
+    // 位置映射表
+    const posGroups = {
+        '后卫': ['左后卫', '右后卫', '中后卫'],
+        '中场': ['中场', '进攻型中场', '防守型中场'],
+        '前锋': ['中锋', '左翼', '右翼']
+    };
+
+    function getPosGroup(pos) {
+        for (const group in posGroups) {
+            if (posGroups[group].includes(pos)) return group;
+        }
+        return null;
+    }
+
     const input = document.getElementById('guess-input');
     const resultsPanel = document.getElementById('search-results');
 
@@ -190,20 +422,21 @@
         try {
             const res = await fetch('./players.json');
             playerDatabase = await res.json();
-        } catch(e) {
-            console.error("Data error. Make sure players.json exists.");
+        } catch (e) {
+            console.error("Data error. Check players.json.");
         }
     }
 
     input.addEventListener('input', (e) => {
         const val = e.target.value.trim().toLowerCase();
-        if (!val) { resultsPanel.style.display = 'none'; return; }
-
+        if (!val) {
+            resultsPanel.style.display = 'none';
+            return;
+        }
         const matches = playerDatabase.filter(p =>
             (p.displayName && p.displayName.toLowerCase().includes(val)) ||
             (p.name.toLowerCase().includes(val))
         ).slice(0, 10);
-
         if (matches.length > 0) {
             resultsPanel.innerHTML = matches.map(p => `
                 <div class="search-item" onclick="handleSelect('${p.name.replace(/'/g, "\\'")}')">
@@ -217,7 +450,7 @@
         }
     });
 
-    window.handleSelect = function(playerName) {
+    window.handleSelect = function (playerName) {
         const p = playerDatabase.find(x => x.name === playerName);
         if (p) {
             resultsPanel.style.display = 'none';
@@ -231,9 +464,7 @@
             lives--;
             document.getElementById('lives-count').innerText = lives;
         }
-
         renderRow(p);
-
         if (p.name === targetPlayer.name) {
             endGame(true, "MISSION ACCOMPLISHED");
         } else if (!isPracticeMode && lives <= 0) {
@@ -256,13 +487,30 @@
         ['nation', 'league', 'club', 'pos', 'age'].forEach(f => {
             const cell = document.createElement('div');
             const isCorrect = guess[f] === targetPlayer[f];
-            cell.className = 'cell' + (isCorrect ? ' correct' : '');
+            cell.className = 'cell';
+
+            if (isCorrect) {
+                cell.classList.add('correct');
+            } else {
+                if (f === 'pos') {
+                    // 位置同线黄色逻辑
+                    const gGroup = getPosGroup(guess.pos);
+                    const tGroup = getPosGroup(targetPlayer.pos);
+                    if (gGroup && tGroup && gGroup === tGroup) {
+                        cell.classList.add('partial');
+                    }
+                }
+                // 判断国家所属州/联合会相同
+                if (f === 'nation') {
+                    if (guess['state']  === targetPlayer['state']) {
+                        cell.classList.add('partial');
+                    }
+                }
+            }
 
             let val = guess[f];
-
             if (f === 'nation') {
                 cell.classList.add('nation-cell');
-                // 修复：如果 nation 是 URL 链接，渲染为图片
                 if (val && val.includes('http')) {
                     cell.innerHTML = `<img src="${val}" class="flag-icon" alt="flag">`;
                 } else {
@@ -283,14 +531,13 @@
         isPracticeMode = practice;
         document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
         document.getElementById(id).classList.add('active');
-        if(id === 'game-view') startNewGame();
+        if (id === 'game-view') startNewGame();
     }
 
     function startNewGame() {
         document.getElementById('overlay').style.display = 'none';
         document.getElementById('result-grid').innerHTML = "";
         targetPlayer = playerDatabase[Math.floor(Math.random() * playerDatabase.length)];
-
         if (isPracticeMode) {
             document.getElementById('lives-count').innerText = "∞";
             document.getElementById('timer-text').innerText = "∞";
@@ -329,8 +576,6 @@
 
     function endGame(won, txt) {
         clearInterval(timerInterval);
-
-        // 显示球员照片
         const photo = document.getElementById('msg-photo');
         if (targetPlayer.photo) {
             photo.src = targetPlayer.photo;
@@ -338,7 +583,6 @@
         } else {
             photo.style.display = 'none';
         }
-
         document.getElementById('overlay').style.display = 'flex';
         document.getElementById('msg-title').innerText = won ? "VICTORY" : "DEFEAT";
         document.getElementById('msg-body').innerHTML = `${txt}<br><span style="color:var(--color-gold); font-size: 1.8rem;">TARGET: ${targetPlayer.displayName || targetPlayer.name}</span>`;
